@@ -10,8 +10,8 @@ export const bodyRoutes : Routes = [
     loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)
   },
   {
-    path:'applicant',
-    loadChildren:()=>import('./applicant/applicant.module').then(m=>m.ApplicantModule)
+    path:'user',
+    loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)
   },
   { path: '**', redirectTo: '404' }
 ]
