@@ -21,8 +21,5 @@ export class AdminTopBarComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  navigateToIp(){
-    this.router.navigate(['/ip-manager'])
-  }
 
 }

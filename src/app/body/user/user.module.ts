@@ -9,18 +9,21 @@ import { FormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
+import { UserComponent } from './user/user.component';
 
 
 export const UserRoutes : Routes = [
   {
-    path:'credentials',
-    component:CredentialsComponent
-  },
-  {
-    path:'ip-manager',
-    component:IpManagerComponent
+    path: '',
+    component: UserComponent,
+    children: [
+      { path: 'credentials', component: CredentialsComponent },
+      { path: 'ip-manager', component: IpManagerComponent },
+      { path: '', redirectTo: 'credentials', pathMatch: 'full' } // Default route
+    ]
   }
-]
+];
+
 
 
 @NgModule({
@@ -28,6 +31,7 @@ export const UserRoutes : Routes = [
     CredentialsComponent,
     IpManagerComponent,
     AdminTopBarComponent,
+    UserComponent,
   ],
   imports: [
     CommonModule,
